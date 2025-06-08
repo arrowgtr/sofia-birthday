@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Χαρούμενα Γενέθλια Σοφία! ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #FFD700, #FF69B4);
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #8B0000;
+            text-align: center;
+            position: relative;
+        }
+        
+        .container {
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+            max-width: 90%;
+            width: 800px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            color: #D40078;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .message {
+                font-size: 1.2em;
+            }
+        }
+        
+        .cake {
+            position: relative;
+            width: 280px;
+            height: 200px;
+            margin: 30px auto;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        }
+        
+        @media (max-width: 600px) {
+            .cake {
+                width: 220px;
+                height: 160px;
+            }
+        }
+        
+        .plate {
+            width: 300px;
+            height: 30px;
+            background: #FFF;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -15px;
+            left: -10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 600px) {
+            .plate {
+                width: 240px;
+            }
+        }
+        
+        .layer {
+            position: absolute;
+            width: 100%;
+            border-radius: 15px;
+            left: 0;
+        }
+        
+        .bottom {
+            height: 80px;
+            background: linear-gradient(135deg, #FFC0CB, #FF69B4, #FFC0CB);
+            bottom: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .middle {
+            height: 70px;
+            background: linear-gradient(135deg, #FFB6C1, #FF1493, #FFB6C1);
+            bottom: 95px;
+            width: 85%;
+            left: 7.5%;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .top {
+            height: 60px;
+            background: linear-gradient(135deg, #FFA07A, #FF6347, #FFA07A);
+            bottom: 165px;
+            width: 70%;
+            left: 15%;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .candle {
+            position: absolute;
+            width: 10px;
+            height: 45px;
+            background: linear-gradient(to bottom, #FFD700, #FFFFFF, #FF4500);
+            bottom: 225px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .flame {
+            position: absolute;
+            width: 18px;
+            height: 35px;
+            background: linear-gradient(to bottom, #FFFF00, #FF8C00, #FF4500);
+            border-radius: 50% 50% 20% 20%;
+            bottom: 270px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+            box-shadow: 0 0 25px #FF4500, 0 0 50px #FF8C00;
+            z-index: 11;
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFD700, #FF6347);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        .message {
+            font-size: 1.4em;
+            line-height: 1.7;
+            margin: 30px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-weight: 300;
+        }
+        
+        .special-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: #8B0000;
+            margin: 25px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .balloon {
+            position: fixed;
+            border-radius: 50%;
+            z-index: 1;
+            animation: floatUp 15s linear infinite;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+        }
+        
+        .balloon:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 60px;
+            background: rgba(0,0,0,0.2);
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) scale(1.1) rotate(5deg); }
+            100% { transform: translateX(-50%) scale(0.95); opacity: 0.9; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0; 
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(calc(-50vw + 100px)) rotate(360deg);
+                opacity: 0; 
+            }
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #FF8C00, #FF4500);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .photo-frame {
+            border: 10px solid #FFD700;
+            border-radius: 10px;
+            padding: 8px;
+            background: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            margin: 20px auto;
+            max-width: 280px;
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+        
+        .photo-frame:hover {
+            transform: rotate(2deg) scale(1.02);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+        
+        .memories {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .memory {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .memory:hover {
+            transform: translateY(-5px);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 9999;
+            animation: confettiFall 5s linear forwards;
+            border-radius: 50%;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 105, 180, 0.6);
+            animation: floatHeart 8s linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0; 
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { 
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0; 
+            }
+        }
+        
+        .footer-message {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #8B0000;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <h1>Χαρούμενα Γενέθλια Σοφία! ❤️</h1>
+        
+        <div class="photo-frame">
+            <!-- Replace with your photo or keep the placeholder -->
+            <div style="height: 200px; background: linear-gradient(135deg, #FFC0CB, #FF69B4); display: flex; align-items: center; justify-content: center; border-radius: 5px;">
+                <span style="font-family: 'Dancing Script', cursive; font-size: 2.5em; color: white;">Σοφία</span>
+            </div>
+        </div>
+        
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="layer bottom"></div>
+            <div class="layer middle"></div>
+            <div class="layer top"></div>
+            <div class="candle"></div>
+            <div class="flame"></div>
+            <!-- Decorations -->
+            <div class="decoration" style="bottom: 50px; left: 20%;"></div>
+            <div class="decoration" style="bottom: 50px; right: 20%;"></div>
+            <div class="decoration" style="bottom: 100px; left: 30%;"></div>
+            <div class="decoration" style="bottom: 100px; right: 30%;"></div>
+        </div>
+        
+        <div class="message">
+            <p>Σοφία μου,</p>
+            <p>Σε αυτήν την ειδική μέρα, θέλω να σου ευχηθώ από καρδιάς ό,τι πιο όμορφο!</p>
+        </div>
+        
+        <div class="special-message">
+            <p>«Ο Θεός να σε έχει πάντα καλά,</p>
+            <p>να χαίρεσαι τη ζωή και να λάμπεις όπως ξέρεις!»</p>
+        </div>
+        
+        <button class="btn" id="surpriseBtn">Πάτησε για έκπληξη!</button>
+        
+        <div id="surpriseMessage" class="hidden">
+            <p style="font-family: 'Dancing Script', cursive; font-size: 2.2em; color: #D40078; margin-bottom: 15px;">Να είσαι πάντα ευτυχισμένη! 🌸</p>
+            <p style="font-size: 1.2em;">Χαρούμενα γενέθλια! Ας είναι αυτή η χρονιά γεμάτη αγάπη, επιτυχίες και χαρές!</p>
+        </div>
+        
+        <div class="footer-message">
+            <p>«Μερικοί άνθρωποι αφήνουν ένα αποτύπωμα στην καρδιά μας...»</p>
+        </div>
+    </div>
+    
+    <audio id="birthdaySong" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        // Create floating balloons
+        function createBalloons() {
+            const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF6347', '#FF8C00', '#FF4500', '#FF00FF', '#00BFFF'];
+            
+            for (let i = 0; i < 25; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                
+                const size = 40 + Math.random() * 80;
+                balloon.style.width = size + 'px';
+                balloon.style.height = size * 1.2 + 'px';
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.bottom = '-100px';
+                balloon.style.background = `radial-gradient(circle at 30% 30%, white, ${colors[Math.floor(Math.random() * colors.length)]})`;
+                balloon.style.animationDuration = 12 + Math.random() * 25 + 's';
+                balloon.style.animationDelay = Math.random() * 15 + 's';
+                
+                document.body.appendChild(balloon);
+            }
+        }
+        
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = 8 + Math.random() * 15 + 's';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heart.style.fontSize = 20 + Math.random() * 30 + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Play music when page loads
+        window.onload = function() {
+            createBalloons();
+            createHearts();
+            const song = document.getElementById('birthdaySong');
+            song.volume = 0.3;
+            
+            // Ask for user interaction before playing audio (browser policy)
+            document.body.addEventListener('click', function() {
+                song.play().catch(e => console.log("Audio play failed:", e));
+            }, { once: true });
+            
+            // Surprise button
+            document.getElementById('surpriseBtn').addEventListener('click', function() {
+                document.getElementById('surpriseMessage').classList.remove('hidden');
+                createConfetti();
+                this.textContent = "Σ' ευχαριστώ! ❤️";
+                this.style.background = "linear-gradient(135deg, #FF69B4, #D40078)";
+            });
+        };
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF6347', '#FF8C00', '#FF4500', '#00BFFF', '#FF00FF'];
+            
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = 8 + Math.random() * 15 + 'px';
+                confetti.style.height = 8 + Math.random() * 15 + 'px';
+                confetti.style.animationDuration = 3 + Math.random() * 4 + 's';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
+            }
+        }
+    </script>
+</body>
+</html>
